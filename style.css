@@ -10,10 +10,16 @@
     background-color: #efefef;
   }
 
-  header, aside {
-    padding: 2rem 4rem;
+header {
+    display: flex;
+    justify-content: space-between;
     border-bottom: 2px solid #29213f;
+}
+
+header, aside, main > section {
+    padding: 2rem 4rem;
   }
+
 
   header ul, aside ul {
     list-style: none;
@@ -36,11 +42,10 @@ header img {
     border-radius: 50%;
     object-fit: cover;
     filter: grayscale(1);
-    margin: 1rem auto;
 }
 
 header h1 {
-    text-align:center;
+    text-align:left;
     color: tomato;
     text-decoration: underline;
 }
@@ -55,8 +60,8 @@ h3 {
 
 
 main {
-    margin: 2rem 4rem;
-    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
 section {
@@ -78,4 +83,28 @@ ul {
 
 section li {
     margin: .5rem;
+}
+
+@media only screen and (max-width: 1280px) {
+    main {
+        display: block;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    header img {
+        margin: 1rem auto;
+    }
+
+    aside, main > section {
+        border-bottom: 2px solid #29213f;
+    }
 }
